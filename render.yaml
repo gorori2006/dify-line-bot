@@ -1,0 +1,22 @@
+# Render Blueprint: Render ダッシュボードの「New > Blueprint」でこのリポジトリを選ぶと作成される
+services:
+  - type: web
+    name: dify-line-bot
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      # 以下の3つはデプロイ時に Render の画面で入力する
+      - key: LINE_CHANNEL_SECRET
+        sync: false
+      - key: LINE_CHANNEL_ACCESS_TOKEN
+        sync: false
+      - key: DIFY_API_KEY
+        sync: false
+      - key: DIFY_BASE_URL
+        value: https://api.dify.ai/v1
