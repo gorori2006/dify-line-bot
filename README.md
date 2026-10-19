@@ -89,3 +89,6 @@ ngrok http 3000
 ## 注意点
 - reply トークンの有効期限（約1分）を過ぎて Dify の回答が返った場合は push メッセージで送ります。push は月間の無料メッセージ通数に含まれます。
 - ngrok の無料プランは起動するたびに URL が変わるため、そのつど Webhook URL を更新してください。
+
+## ライセンス
+[MIT License](LICENSE)
